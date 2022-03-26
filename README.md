@@ -12,3 +12,5 @@ option to scan bookmarks and add appropriate tags automatically.
 
 Bookmarks backup in case we clobber something. (Best to enable FF Sync
 if you can.)
+
+I'm taking inspiration from the Firefox 3 extension TagSifter.
