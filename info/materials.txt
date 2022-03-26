@@ -1,0 +1,114 @@
+https://lifehacker.com/tagsifter-slices-and-dices-your-bookmarks-by-tag-400653
+https://news.ycombinator.com/item?id=774193
+https://www.google.com/search?q=firefox+extension+howto+create&client=firefox-b-d&tbs=li%3A1&ei=0OE-YtbgF8GQ8gKRzbzYCg&ved=0ahUKEwjWiJiJwOP2AhVBiFwKHZEmD6sQ4dUDCA0&uact=5&oq=firefox+extension+howto+create&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgYIABANEB46BwghEAoQoAE6CAghEBYQHRAeSgQIQRgASgQIRhgAUNgEWNAoYLQpaANwAXgBgAHIAYgBtBCSAQUyLjcuN5gBAKABAcgBCMABAQ&sclient=gws-wiz#unfucked
+https://linuxconfig.org/how-to-create-package-and-sign-a-firefox-web-extension
+https://kzar.co.uk/blog/2019/10/15/firefox-extension-development/
+https://github.com/hackademix/noscript
+http://web.archive.org/web/20110118081953/http://linux.com/archive/feature/145955
+http://web.archive.org/web/20100106032630/http://cs.stanford.edu/people/adw/tagsifter/
+http://web.archive.org/web/20090628002545/http://cs.stanford.edu/people/adw/bookmarktags/
+
+Wishlist
+
+    Integrate with the awesomebar?
+    Add a tags column, showing each bookmark's tags, to the bookmarks list.
+    Group all copies of a bookmark into a single row in the bookmarks list with nested, collapsible children for the actual copies.
+    A subset-based tag view. A list of two hundred tags is not so useful. If tag A only appears where tag B does, hide A until we choose B. Tag "bundles" (supersets) will naturally emerge.
+    Better query operators for bookmarks, like url:, title:, date:, etc.
+    Livemark expansion.
+    Drag and drop support in the tag list and cloud.
+    Ability to save queries for later recall.
+    Query history.
+
+
+
+Firefox 3 lets you tag your bookmarks, but it doesn't give you a great way to browse your bookmarks by their tags. TagSifter tries to.
+
+Click a bunch of tags in the sidebar or menu to see the bookmarks and other tags that are related. Use the related tags to quickly filter your search.
+
+Or, if you can handle real ultimate power, use a full range of set operators to combine your tags in arbitrary and interesting ways. To see all bookmarks whose names contain the word "telecaster" and that you've tagged as being about classic films or books but not about hamsters:
+
+(classic & (film + book)) - hamsters ?telecaster
+
+TagSifter also comes with a tool to help you tag your old bookmarks as you migrate to Firefox 3.
+What's a tag?
+
+Just a label or category that describes a set of bookmarks, which presumably share something in common.
+What's a Bookmark Tags tag?
+
+Bookmark Tags "tags" are defined by your bookmark folders—tags in quotes because they exist only conceptually. Two folders with the same name represent the same tag. The set of bookmarks that are tagged by a tag is all the bookmarks contained in all the folders with the same name as the tag. The set of tags that tag a bookmark is the set represented by all the folders that contain the bookmark.
+
+Tag names are case-insensitive, so two folders named "crayon shin-chan" and "Crayon Shin-Chan" represent the same tag. Tags can be multi-word, in which case they're surrounded in quotes.
+How's this better than folders alone?
+
+If for any particular name you've only got one folder with that name, then Bookmark Tags is just a fancy way of navigating your bookmarks tree and probably not so useful.
+
+The key is that if you've got two (or more) folders with the same name, and one isn't an ancestor of the other, and bookmarks under folders of the same name are considered to be in some common set, then you've got a relationship among those bookmarks that can't be expressed in a folder hierarchy alone. You've got tagging (kind of), which everyone knows is the bee's knees.
+How do I tag a bookmark?
+
+When you add it or when you edit its properties:
+
+Adding a bookmark
+
+Select tags by clicking on them in the tag cloud or by typing them into the text box. Bookmark Tags will autocomplete tags for you as you type. If it autocompletes the tag you wanted, press Tab to skip the cursor to after the tag. Press Esc in the text box to remove the last tag you entered and Shift+Esc to remove all tags. If a tag contains multiple words, surround it in quotes, like "The Anniversary." To make a new tag, just type a new name.
+How do I use tags to browse my bookmarks?
+
+The tag menu, which you can access from its toolbar button:
+
+Tag menu
+
+You can also use the tag browser sidebar:
+
+Tag browser sidebar
+
+The sidebar can be called up by its toolbar button, the sidebar menu, or Ctrl+Shift+B.
+
+The browser displays only those tags and bookmarks related to the tags in the query. (Two tags are related if they have at least one bookmark in common.)
+
+Clicking on a tag will add it to the query. You can also type tags into the text box and press Enter. Bookmark Tags will autocomplete tags for you as you type. If it autocompletes the tag you wanted, press Tab to add the tag to the query. When typing a tag with multiple words, surround the name in quotes, like "Coffee Cat."
+
+To remove tags from the query, click a tag under the text box. By default, all succeeding tags will be removed. You can right-click to bring up a menu for more choices or change the default action in Bookmark Tags's preferences. You can also press Esc while typing in the text box to remove the last tag.
+
+To reset the query, press Shift+Esc in the text box or click the button next to the text box. 
+
+
+What happens when I tag a bookmark?
+
+Bookmark Tags finds the best folder in your bookmarks hierarchy—creating new folders if necessary—and sticks it there.
+
+Which folder is the best? Starting from the top of the bookmarks tree,1 Bookmark Tags finds the longest path in the tree that represents a subset of the tags you chose. If this subset is equal to the set of tags, the bookmark goes in the final folder in the path. Otherwise, Bookmark Tags creates folders at the end of the path and sticks the bookmark in the final folder.
+
+What you end up with is a path of folders containing the bookmark, each folder in the path representing a tag of the bookmark.
+
+If you don't like the path where Bookmark Tags files a bookmark, just create a path manually. Then whenever you tag a bookmark similarly, Bookmark Tags will use that path.
+Folders represent tags? So you're saying Bookmark Tags will make lots of folders in my bookmarks? I don't like that. No sir, not at all. Why couldn't it work some other way?
+
+Yes.
+How can I manage Bookmark Tags's clutter?
+
+Try changing the root folder preference. By default Bookmark Tags creates new folders inside the top of the bookmarks hierarchy, but you can tell Bookmark Tags to use another folder as the root. Bookmark Tags won't make any new folders outside the root folder.
+The sidebar and tag menu show bookmarks that are outside my root folder. What gives?
+
+That's how Bookmark Tags is designed to work. The reasoning is that it would be annoying having to switch back and forth between the Bookmark Tags interface and the standard bookmarks interface depending on whether or not the bookmark you're looking for is tagged. Anyway, as discussed above and elsewhere, Bookmark Tags considers all your bookmarks "tagged," regardless of whether they're in your root folder.
+How can I modify a tag?
+
+Tags can be renamed and deleted. Beware in both cases because—can I overstate this?—tags are really just your bookmark folders. Right click on a tag name in any tag cloud to bring up a menu.
+
+When you rename a tag, you are really renaming all bookmark folders with the same name as the tag.
+
+When you delete a tag, you are really deleting all bookmark folders with the same name as the tag. However, the bookmarks and subfolders contained in those folders will not be deleted. They'll be moved up a level to the folders' parents.
+How can I backup or sync my tags?
+
+Have you been paying attention? Your tag info is inherent in your regular, standard, normal, vanilla bookmarks file. Just backup or sync your bookmarks.
+Any options or preferences I can fiddle with?
+
+You can change preferences in the same way as other Firefox extensions, by calling up the Add-ons window, selecting Bookmark Tags, and clicking Options (or Preferences on a Mac or Linux).
+Jeez, tag clouds are so passé, and not only, they're utterly ill-suited for displaying only one person's tags.
+
+OK, Professor, twiddle the tag display preference and change your clouds to lists.
+I don't like how Bookmark Tags draws tag labels. I want fancy borders around my tags. I want to change the colors of my tags. I want less spacing around my tags.
+
+Good thing you know CSS.
+
+1 Actually you can change the folder in which Bookmark Tags begins searching by modifying the root folder preference. You can use a special folder to contain Bookmark Tags's clutter, for example.
+
