@@ -1,13 +1,12 @@
 {
   "manifest_version": 2,
   "name": "Firefox Filtration",
-  "version": "0.2",
+  "version": "0.1",
   "author": "Adam J. Richardson",
-  "description": "Filter bookmarks",
+  "description": "Filter and auto-tag your bookmarks",
   "icons": {
     "48": "icons/icon48.jpg"
   },
-
   "permissions": ["contextMenus"],
   "background" : {
     "scripts": ["background.js"]
