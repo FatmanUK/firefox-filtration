@@ -1,0 +1,5 @@
+https://github.com/mdn/webextensions-examples/
+
+https://github.com/mdn/webextensions-examples/tree/master/bookmark-it
+https://github.com/mdn/webextensions-examples/tree/master/favourite-colour
+https://github.com/mdn/webextensions-examples/blob/master/annotate-page
