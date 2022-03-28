@@ -85,8 +85,8 @@ try:
       print('Zipping file: %s' % file)
       zip.write(file)
 except ValueError:
-  # TODO
-  print('Oh no! V')
+  # This happens if the JSON is not parseable
+  print('ValueError: %s %s' % (ver_date, version))
 except TypeError:
   # TODO
   print('Oh no! T')
@@ -98,5 +98,6 @@ except:
   print('Oh no!')
 finally:
   print('Assert: %s' % ensure)
-# zip -Tv fff-0.1.20220327151223.xpi
+  # TODO
+  # zip -Tv fff-0.1.20220327151223.xpi
   print('Assertions passed.')
