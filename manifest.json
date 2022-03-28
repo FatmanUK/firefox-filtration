@@ -9,7 +9,7 @@
   },
   "browser_action" : {
     "browser_style": true,
-    "default_popup": "popup.html",
+    "default_popup": "html/config.html",
     "default_icon": {
       "16": "icons/icon16.jpg",
       "32": "icons/icon32.jpg",
