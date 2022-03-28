@@ -112,3 +112,7 @@ Good thing you know CSS.
 
 1 Actually you can change the folder in which Bookmark Tags begins searching by modifying the root folder preference. You can use a special folder to contain Bookmark Tags's clutter, for example.
 
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Add_a_button_to_the_toolbar
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_action
+https://www.google.com/search?q=firefox+addon+development+icon+to+toolbar&client=firefox-b-d&source=lnt&tbs=cdr%3A1%2Ccd_min%3A12%2F9%2F2015%2Ccd_max%3A3%2F28%2F2022&tbm=#unfucked
+
