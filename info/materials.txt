@@ -116,3 +116,5 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Add_a_but
 https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_action
 https://www.google.com/search?q=firefox+addon+development+icon+to+toolbar&client=firefox-b-d&source=lnt&tbs=cdr%3A1%2Ccd_min%3A12%2F9%2F2015%2Ccd_max%3A3%2F28%2F2022&tbm=#unfucked
 
+https://github.com/mdn/webextensions-examples
+

@@ -9,12 +9,35 @@
   },
   "browser_action" : {
     "browser_style": true,
-    "default_popup": "popup.html",
+    "default_popup": "html/config.html",
     "default_icon": {
       "16": "icons/icon16.jpg",
       "32": "icons/icon32.jpg",
       "48": "icons/icon48.jpg"
     },
-    "default_title": "Firefox Filtration"
+    "default_title": "Firefox Filtration",
+    "theme_icons": [
+      {
+        "light": "icons/icon48-light.jpg",
+        "dark": "icons/icon48.jpg",
+        "size": 48
+      }
+    ]
+  },
+  "sidebar_action": {
+    "default_title": "Firefox Filtration",
+    "default_panel": "html/sidebar.html",
+    "default_icon": "icons/icon48-light.jpg"
+  },
+  "permissions": [
+    "bookmarks",
+    "storage"
+  ],
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F"
+      }
+    }
   }
 }
