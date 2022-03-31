@@ -7,6 +7,10 @@
   "icons": {
     "48": "icons/icon48.jpg"
   },
+  "options_ui": {
+    "browser_style": true,
+    "page": "html/settings.html"
+  },
   "background": {
     "scripts": ["html/scripts/background.js"]
   },
