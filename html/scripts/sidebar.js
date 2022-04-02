@@ -14,9 +14,81 @@ function debug(line) {
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1225916
 // have to do own tags for now
 // https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Author_fast-loading_HTML_pages
+function get_tags_from_bookmark(bookmark) {
+   // This is not implemented in Firefox yet
+   return [];
+}
+
+function get_tags_from_title(bookmark) {
+   // replace all forbidden symbols with space
+   // TODO: add more forbidden chars
+   const forbidden = '	;:/.,-[]{}#@~–';
+   title = bookmark.title.trim(); // remove spaces at either end
+   for (ch of forbidden) {
+      title = title.replace(new RegExp('[' + ch + ']', 'g'), '<>'); // replace forbiddens with <>
+   }
+   title = title.replace(/></g, ''); // remove ><
+   title = title.replace(/<>/g, ' '); // replace <> with space
+   tags = title.split(' '); // split on space
+   return tags;
+}
+
+function get_tags_from_content(bookmark) {
+   // TODO: content includes meta tags and actual content
+   return [];
+}
+
+function remove_commons(tags) {
+   // TODO: add more common words
+   const commons = [
+      'and',
+      'com',
+      'for',
+      'pl',
+      'a'
+   ];
+   for (common of commons) {
+      tags = tags.filter(x => x.toString().toLowerCase() != common.toString().toLowerCase());
+   }
+   return tags;
+}
+
+function remove_blanks(tags) {
+   return tags.filter(x => x != '');
+}
+
+// potential danger: downloading arbitrary stuff
+// should be ok if not running scripts? just examining code
+// abandon if binary, not text --- mark as binary?
+function autotag_bookmark(bookmark) {
+   bookmark_data = {
+      'title': bookmark.title,
+      'url': bookmark.url,
+      'dateAdded': bookmark.dateAdded,
+      'broken': false, // mark as broken in UI
+      'suspicious': false, // mark as suspicious in ui
+      'tags': []
+   };
+   // if not already tagged, do this one
+   // TODO: get item from db, check if tags exist --- return early if so
+   already_tagged = false;
+   if (already_tagged) {
+      return;
+   }
+   tags = [];
+   //tags.push(get_tags_from_bookmark(bookmark)); // 1 - not implemented yet
+   tags.push(get_tags_from_title(bookmark)); // 2
+   // TODO: add setting to disable #3 entirely, with warning that it might take time and consume considerable bandwidth if there are many bookmarks
+   tags.push(get_tags_from_content(bookmark)); // 3 - content includes meta tags and actual content
+   //tags.push(get_tags_from_preview(bookmark)); // 4 - no - this is nonsense
+   // TODO: get search engine SEO keywords somehow?
+   tags = remove_commons(tags);
+   tags = remove_blanks(tags);
+   bookmark_data.tags = tags;
+}
 
 function save_bookmark(bookmark) {
-   console.log('URL: ' + bookmark.url);
+   debug('URL: ' + bookmark.url);
    // TODO: actually save bookmarks (should do restore button too)
    // This is apparently not documented anywhere. Uhmm. Find an addon
    // which does this and learn from it.
