@@ -1,4 +1,8 @@
 debug_mode = true
+count_bookmarks = 0;
+database_version = 1;
+
+var db;
 
 function debug(line) {
    if (debug_mode) {
@@ -44,4 +48,5 @@ btn_backup.addEventListener('click', () => {
    }, function (error) {
       console.log(error);
    });
+   count_bookmarks = 0;
 });
