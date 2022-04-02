@@ -23,6 +23,11 @@ function save_bookmark(bookmark) {
 }
 
 function recurse_bookmarks(tree, f) {
+// debug
+   if (count_bookmarks > 10) {
+      return;
+   }
+// debug
    if (tree.url) {
       f(tree);
       ++count_bookmarks;
