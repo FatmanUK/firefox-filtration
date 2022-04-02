@@ -10,11 +10,9 @@ function debug(line) {
    }
 }
 
-// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/BookmarkTreeNode
 // Firefox feature request: bookmark tags API
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1225916
 // have to do own tags for now
-// https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
 // https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Author_fast-loading_HTML_pages
 
 function save_bookmark(bookmark) {
